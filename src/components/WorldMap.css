@@ -1,0 +1,15 @@
+.leaflet-container{
+    background-color: black;
+}
+
+.dark-theme{
+    background-color: black;
+}
+
+.map-title{
+ position: absolute;
+ top: 1rem;
+ right: 50%;
+ color: #FF74B1;
+ z-index: 100;
+}
