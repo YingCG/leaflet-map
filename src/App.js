@@ -1,10 +1,10 @@
 import './App.css';
-import WorldMap from './components/WorldMap';
+import LegendOnMap from './components/legend/LegendOnMap';
 
 function App() {
   return (
     <div className='App'>
-     <WorldMap/>
+     <LegendOnMap/>
     </div>
   );
 }

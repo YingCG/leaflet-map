@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    color: blueviolet;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.animate-loading{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: blueviolet;
+}
