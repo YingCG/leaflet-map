@@ -1,7 +1,10 @@
 import './App.css';
+import React, { useState } from 'react';
+
 import LegendOnMap from './components/legend/LegendOnMap';
 
-function App() {
+
+function App() {  
   return (
     <div className='App'>
      <LegendOnMap/>

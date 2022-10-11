@@ -8,12 +8,12 @@ function LegendOnMap() {
   // const [countries, setCountries] = useState([])
   const [areaInfo, setAreaInfo] = useState([])
 
-  const load = () => {
+  const showInfo = () => {
     const loadJournal = new LoadJournal();
     loadJournal.load(setAreaInfo)
   }
 
-  useEffect(load, [])
+  // useEffect(load, [])
 
   return (
     <div className='map-container'>
