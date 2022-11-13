@@ -4,33 +4,27 @@ import { MapContainer, GeoJSON } from 'react-leaflet'
 import mapData from '../../data/countries.json'
 import "leaflet/dist/leaflet.css"
 import "./worldMap.css"
+import AddStory from '../legend/AddStory'
+import Legends from '../legend/Legends'
+import LegendOnMap from '../legend/LegendOnMap'
 
-function WorldMap({areaInfo}) {
-
-    //console.log(areaInfo);
-
-    const mapStyle = { 
-        fillColor: 'black',
-        color: '#1CD6CE',
-        fillOpacity: 0.2,
-        weight: 1,
-        dashArray: 1
-    }
-    
-
+function WorldMap() {
+    const [myStories, setMyStories] = useState('')
+ 
 
     const changeCountryInfo = (country, info) => {
         const countryName = country.properties.ADMIN
-        const areaInfo = country.properties.areaInfo
-        info.bindPopup(`${countryName} ${areaInfo}`)
+        info.bindPopup(`${countryName}${<LegendOnMap areaInfo={myStories}/>} ${<AddStory/>}`)
     }
 
+    const addMyStory = (newStory) => {
+        setMyStories( myStories => [...myStories, newStory])
+    }
 
     return (
         <div className='dark-theme'>
-            <MapContainer style={{ minHeight: '100vh' }} zoom={3} center={[15, 100]}>
-                {/* <GeoJSON data={areaInfo} style={mapStyle} onEachFeature={changeCountryInfo}/> */}
-                <GeoJSON data={mapData.features} style={mapStyle} onEachFeature={changeCountryInfo}/>
+            <MapContainer style={{ minHeight: '100vh' }} zoom={4} center={[-25, 135]}>
+                <GeoJSON data={mapData.features} onEachFeature={changeCountryInfo} onClick={addMyStory}/>
             </MapContainer>
         </div>
     )

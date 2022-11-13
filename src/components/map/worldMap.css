@@ -10,8 +10,34 @@
 .map-title {
   position: fixed;
   text-align: center;
-  bottom: 1rem;
-  right: 50%;
+  bottom: 2rem;
   color: #f07dea;
-  z-index: 1000;
+  width: 100%;
+  z-index: 5000;
+}
+
+.leaflet-interactive{
+  background-repeat: 'repeat';
+  background-color: 'black';
+  stroke-dasharray: 1;
+}
+
+.leaflet-pane > svg path{
+  /* fill: #1CD6CE; */
+  fill-opacity: 0.2;
+  font-weight: 1;
+  stroke-width: 1;
+}
+
+.leaflet-popup-content{
+  margin: 10px;
+}
+/* 
+.leaflet-popup-content-wrapper{
+margin: 10px;
+padding: 10px;
+} */
+
+.leaflet-popup-tipr{
+margin-top: 20px;
 }

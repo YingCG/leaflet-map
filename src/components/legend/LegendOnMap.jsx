@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Legend from './Legend';
+import Legend from './Legends';
 import WorldMap from '../map/WorldMap';
 import './legend.css'
 import LoadJournal from '../../data/LoadJournal' 
 
 function LegendOnMap() {
-  // const [countries, setCountries] = useState([])
-  const [areaInfo, setAreaInfo] = useState([])
+  const [areaInfo, setAreaInfo] = useState('')
 
   const showInfo = () => {
     const loadJournal = new LoadJournal();
@@ -19,7 +18,7 @@ function LegendOnMap() {
     <div className='map-container'>
       {areaInfo.length === 0 
       ? <div> <h1 className='map-title'>The world is your canvas...</h1> <WorldMap /></div>
-      : <div> <WorldMap /> <Legend/></div>}
+      : <div> <WorldMap /> <Legend areaInfo={areaInfo}/></div>}
     </div>
   )
 }
